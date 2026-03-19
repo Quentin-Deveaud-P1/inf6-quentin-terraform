@@ -8,7 +8,7 @@ resource "google_compute_instance" "vm" {
   machine_type = var.machine_type
   zone         = var.zone
 
-  tags = ["tp-ssh"]
+  tags = ["tp-ssh","allow_web"]
 
   boot_disk {
     initialize_params {

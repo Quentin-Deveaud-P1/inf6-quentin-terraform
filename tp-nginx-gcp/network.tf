@@ -33,6 +33,6 @@ resource "google_compute_firewall" "allow_web" {
   }
 
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["allow-web"]
+  target_tags   = ["allow_web"]
 }
 
