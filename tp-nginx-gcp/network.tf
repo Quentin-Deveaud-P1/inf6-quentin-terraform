@@ -23,7 +23,7 @@ resource "google_compute_firewall" "allow_ssh" {
   target_tags   = ["tp-ssh"]
 }
 
-resource "google_compute_firewall" "allow_web" {
+resource "google_compute_firewall" "allow-web" {
   name    = "tp-quentin-web"
   network = google_compute_network.vpc.name
 
@@ -33,6 +33,6 @@ resource "google_compute_firewall" "allow_web" {
   }
 
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["allow_web"]
+  target_tags   = ["allow-web"]
 }
 
