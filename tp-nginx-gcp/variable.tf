@@ -1,6 +1,5 @@
 variable "project_id" {
   type = string
-  default ="quentin-deveaud-gcp"
 }
 
 variable "region" {

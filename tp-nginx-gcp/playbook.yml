@@ -1,0 +1,15 @@
+- name: Déployer NGINX sur les serveurs web
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Mettre à jour le cache APT et installer NGINX
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+    - name: S'assurer que NGINX est démarré et activé au boot
+      service:
+        name: nginx
+        state: started
+        enabled: yes
