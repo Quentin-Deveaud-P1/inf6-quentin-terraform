@@ -1,5 +1,6 @@
 variable "project_id" {
   type = string
+  default ="quentin-deveaud-gcp"
 }
 
 variable "region" {
@@ -14,7 +15,7 @@ variable "zone" {
 
 variable "ssh_user" {
   type    = string
-  default = "ansible"
+  default = "student"
 }
 
 variable "machine_type" {
