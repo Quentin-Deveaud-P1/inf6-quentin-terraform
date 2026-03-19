@@ -23,7 +23,7 @@ resource "google_compute_instance" "vm" {
   network_interface {
     subnetwork = google_compute_subnetwork.subnet.id
     access_config {
-      nat_ip = google_compute_address.public_ip[each.key].address
+      nat_ip = google_compute_address.public_ip.address
     }
   }
 }
