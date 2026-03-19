@@ -1,17 +1,17 @@
 resource "google_compute_network" "vpc" {
-  name                    = "${local.name_prefix}-vpc"
+  name                    = "tp-quentin-vpc"
   auto_create_subnetworks = false
 }
 
 resource "google_compute_subnetwork" "subnet" {
-  name          = "${local.name_prefix}-subnet"
+  name          = "tp-quentin-subnet"
   region        = var.region
   ip_cidr_range = "10.0.1.0/24"
   network       = google_compute_network.vpc.id
 }
 
 resource "google_compute_firewall" "allow_ssh" {
-  name    = "${local.name_prefix}-ssh"
+  name    = "tp-quentin-ssh"
   network = google_compute_network.vpc.name
 
   allow {
@@ -24,7 +24,7 @@ resource "google_compute_firewall" "allow_ssh" {
 }
 
 resource "google_compute_firewall" "allow_web" {
-  name    = "${local.name_prefix}-web"
+  name    = "tp-quentin-web"
   network = google_compute_network.vpc.name
 
   allow {
