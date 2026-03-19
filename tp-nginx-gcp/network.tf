@@ -29,10 +29,10 @@ resource "google_compute_firewall" "allow_web" {
 
   allow {
     protocol = "tcp"
-    ports    = [tostring(var.web_port)]
+    ports    = ["80"]
   }
 
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["tp-web"]
+  target_tags   = ["allow-web"]
 }
 
