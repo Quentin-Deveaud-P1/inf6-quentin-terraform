@@ -1,6 +1,5 @@
 resource "google_compute_address" "public_ip" {
-  for_each = local.roles
-  name     = "tp-quentin-ip-${each.key}"
+  name     = "tp-quentin-ip"
   region   = var.region
 }
 
